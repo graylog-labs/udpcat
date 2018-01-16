@@ -1,0 +1,15 @@
+language: go
+go:
+  - 1.9.x
+script:
+  - make build-all
+deploy:
+  provider: releases
+  api_key:
+    secure: Ec7cmqia2cA4V05TuAFrXcC2KqQfSs8tyjy0sBSKv/VfYeXFI+UfgPtLPI+8VLDpgxKLguVhE/7quP5qs+PAyWCLfrDTEOE0i7RqEwoUw5FA3QWkK5NcV25tKkhgAugViShkMI7QjYYqzRowJ4TQnUMugJ71tXedhTpOT06wqIj07gWURI7GS+sHD/cv4hqzDn5reFqoH8XQ8byZVtEm5X69Olha5yyWeJtwQ7iH/O1rxNf0IWbtiO5gpMneis7zclltgWGbuaE/dnaF8N9yicdMW3TBATWO4VpO7ZM5AenX5BPvQ1CmXRWkWtpe2I9MvcgZsR2fWoljfwMgDBJocCNTg+ns1a+giAnTXzH+a1sYpa7FIekKM/ZCisIj1wxKk8GoR/8+LkUGGtcuv/zLxR1qFaefzy7JpdPjDYUF62h5mRzIfW44JwxwgZo/apq2DNw84NPNjP5/DoPexMsilRHSmE8B1OVMD0JDQzbWxDGIMtki89WIFhTOlZDhAcwjWBGT//mzZKWftRZHMpaBT//H1zVo8YP4qRXQCyfDfQuPpF1YaNUXWU9patCJzwSE1IUElreMaD3iAZCWdowlCKYO7PO1uXzmkGSrV5WH+XiQVR+p4tuxbWA9qC7bPQ+ClP4blWLFyghx/iWCtGyWbqmyL4ILdddxoovB4H3jN2Y=
+  file_glob: true
+  file: "build/*"
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: graylog-labs/udpcat
